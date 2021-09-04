@@ -99,7 +99,7 @@ def setup(hass, config):
         """Get called when an Octoprint server has been discovered."""
         _LOGGER.debug("Found an Octoprint server: %s", info)
 
-    discovery.listen(hass, SERVICE_OCTOPRINT, device_discovered)
+    discovery.async_listen(hass, SERVICE_OCTOPRINT, device_discovered)
 
     if DOMAIN not in config:
         # Skip the setup if there is no configuration present
